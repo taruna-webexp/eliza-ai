@@ -4,7 +4,7 @@ import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "./components/app-sidebar";
 import { TooltipProvider } from "./components/ui/tooltip";
 import { Toaster } from "./components/ui/toaster";
-import { HashRouter, Route, Routes } from "react-router";
+import { BrowserRouter, Route, Routes } from "react-router";
 import Chat from "./routes/chat";
 import Overview from "./routes/overview";
 import Home from "./routes/home";
@@ -28,7 +28,7 @@ function App() {
                     colorScheme: "dark",
                 }}
             >
-                <HashRouter>
+                <BrowserRouter>
                     <TooltipProvider delayDuration={0}>
                         <SidebarProvider>
                             <AppSidebar />
@@ -50,7 +50,7 @@ function App() {
                         </SidebarProvider>
                         <Toaster />
                     </TooltipProvider>
-                </HashRouter>
+                </BrowserRouter>
             </div>
         </QueryClientProvider>
     );

@@ -23,4 +23,14 @@ export const mainCharacter: Character = {
     name: "AssureAgent",
     modelProvider: ModelProviderName.OPENAI,
     clients: [Clients.TWITTER],
+    settings: {
+        ...defaultCharacter.settings,
+        secrets: {
+            ...defaultCharacter.settings?.secrets,
+            TWITTER_API_KEY: process.env.TWITTER_API_KEY ?? "",
+            TWITTER_API_SECRET: process.env.TWITTER_API_SECRET ?? "",
+            TWITTER_ACCESS_TOKEN: process.env.TWITTER_ACCESS_TOKEN ?? "",
+            TWITTER_ACCESS_SECRET: process.env.TWITTER_ACCESS_SECRET ?? "",
+        },
+    },
 };
