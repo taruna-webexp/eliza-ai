@@ -1,0 +1,32 @@
+Server is deployed on AWS
+
+http://3.21.182.52:3000/
+
+# Node & pnpm Versions
+node version - v23.3.0
+pnpm version - v10.6.5
+
+# How to set versions to use
+nvm use v23.3.0
+nvm use v23.3.0
+
+# Update pnpm
+pnpm self-update
+
+# Install Dependencies
+pnpm install
+pnpm install --no-frozen-lockfile  # Use if lockfile causes issues
+
+# Build the Project
+pnpm build
+
+# If build fails:
+# ERROR  run failed: command exited (1)
+pnpm approve-builds  # Run this command
+# Press 'a' and Enter, then press 'y' and Enter
+
+# Start the Application
+pnpm start
+
+# Open a second terminal tab for the client
+pnpm start:client
