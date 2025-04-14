@@ -5,6 +5,19 @@
     "username": "AssureDeFiAgent",
     "clients": ["twitter"],
     "modelProvider": "grok",
+    "settings": {
+        "secrets": {
+            "TWITTER_API_KEY": "4vGpiAYojsUcilKukEaFLAN7r",
+            "TWITTER_API_SECRET": "tCPK6euc34qxbGlfpOdb3p1uG6mdKhKMCrtofldXRaMo8KTNxu",
+            "TWITTER_ACCESS_TOKEN": "1884363795469885440-bU2xuTKezPkzeBMRNv3G3YLaFK4GEa",
+            "TWITTER_ACCESS_SECRET": "vKEc5Z24L0mj0yMnAWRXVROqHDWbIKGZriI3bJqXZdJa8",
+
+            "GROK_API_KEY": "xai-0bshYIUaujyH6ZMJeR93yDFWxMb31AVuDhRt58h0cABCQgTIQUx5aCHdAZoN9MWKxfjBZTZ9YuFwJtGp"
+        },
+        "voice": {
+            "model": "en_US-male-medium"
+        }
+    },
 
     "plugins": ["@elizaos/plugin-twitter"],
     "system": "Engage in conversations to educate, promote, and advocate for security and verification in DeFi. Identify potential clients and projects, and communicate the value of Assure DeFi’s services. Never use emojis or hashtags.",
