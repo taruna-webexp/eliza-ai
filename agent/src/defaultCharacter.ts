@@ -5,20 +5,12 @@ export const defaultCharacter: Character = {
     username: "AssureDeFiAgent",
     modelProvider: ModelProviderName.GROK,
     imageVisionModelProvider: ModelProviderName.GROK,
-    clients: [],
-    plugins: [],
+    clients: ["twitter"],
+
     settings: {
         secrets: {
             GROK_API_KEY:
                 "xai-0bshYIUaujyH6ZMJeR93yDFWxMb31AVuDhRt58h0cABCQgTIQUx5aCHdAZoN9MWKxfjBZTZ9YuFwJtGp",
-
-            TWITTER_API_KEY: "4vGpiAYojsUcilKukEaFLAN7r",
-            TWITTER_API_SECRET:
-                "tCPK6euc34qxbGlfpOdb3p1uG6mdKhKMCrtofldXRaMo8KTNxu",
-            TWITTER_ACCESS_TOKEN:
-                "1884363795469885440-bU2xuTKezPkzeBMRNv3G3YLaFK4GEa",
-            TWITTER_ACCESS_SECRET:
-                "vKEc5Z24L0mj0yMnAWRXVROqHDWbIKGZriI3bJqXZdJa8",
         },
         voice: {
             model: "en_US-male-medium",

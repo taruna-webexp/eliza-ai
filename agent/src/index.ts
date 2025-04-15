@@ -18,13 +18,9 @@ import {
     settings,
     stringToUuid,
     validateCharacterConfig,
-    Client,
-    // Clients,
 } from "@elizaos/core";
-import { TwitterClientInterface } from "@elizaos/client-twitter";
-
+import { defaultCharacter } from "./defaultCharacter.ts";
 // import { mainCharacter } from "./mainCharacter.ts";
-import { mainCharacter } from "./mainCharacter.ts";
 import { bootstrapPlugin } from "@elizaos/plugin-bootstrap";
 import JSON5 from "json5";
 
@@ -34,23 +30,6 @@ import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
 import yargs from "yargs";
-export enum Clients {
-    ALEXA = "alexa",
-    DISCORD = "discord",
-    DIRECT = "direct",
-    TWITTER = "twitter",
-    TELEGRAM = "telegram",
-    TELEGRAM_ACCOUNT = "telegram-account",
-    FARCASTER = "farcaster",
-    LENS = "lens",
-    AUTO = "auto",
-    SLACK = "slack",
-    GITHUB = "github",
-    INSTAGRAM = "instagram",
-    SIMSAI = "simsai",
-    XMTP = "xmtp",
-    DEVA = "deva",
-}
 
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
@@ -398,7 +377,7 @@ export async function loadCharacters(
 
     if (loadedCharacters.length === 0) {
         elizaLogger.info("No characters found, using default character");
-        loadedCharacters.push(mainCharacter);
+        loadedCharacters.push(defaultCharacter);
     }
 
     return loadedCharacters;
@@ -642,18 +621,9 @@ export async function initializeClients(
 ) {
     // each client can only register once
     // and if we want two we can explicitly support it
-    const clients: Record<string, any> = {};
-    const clientTypes = Object.keys(clients); // this gives you: ['twitter', 'discord', etc.]
-
+    const clients: ClientInstance[] = [];
+    // const clientTypes = clients.map((c) => c.name);
     // elizaLogger.log("initializeClients", clientTypes, "for", character.name);
-    elizaLogger.log("initializeClients", clientTypes, "for", character.name);
-
-    if (clientTypes.includes(Clients.TWITTER)) {
-        const twitterClient = await TwitterClientInterface.start(runtime);
-        if (twitterClient) {
-            clients.twitter = twitterClient;
-        }
-    }
 
     if (character.plugins?.length > 0) {
         for (const plugin of character.plugins) {
@@ -896,7 +866,7 @@ const startAgents = async () => {
     let serverPort = Number.parseInt(settings.SERVER_PORT || "3000");
     const args = parseArguments();
     const charactersArg = args.characters || args.character;
-    let characters = [mainCharacter];
+    let characters = [defaultCharacter];
 
     if (charactersArg || hasValidRemoteUrls()) {
         characters = await loadCharacters(charactersArg);
