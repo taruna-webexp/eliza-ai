@@ -16,20 +16,22 @@ const factsProvider: Provider = {
             actors: state?.actorsData,
         });
 
-        const embedding = await embed(runtime, recentMessages);
+        const _embedding = await embed(runtime, recentMessages);
 
         const memoryManager = new MemoryManager({
             runtime,
             tableName: "facts",
         });
 
-        const relevantFacts = await memoryManager.searchMemoriesByEmbedding(
-            embedding,
-            {
-                roomId: message.roomId,
-                count: 10,
-            }
-        );
+        const relevantFacts = [];
+        //  await memoryManager.searchMemoriesByEmbedding(
+        //     embedding,
+        //     {
+        //         roomId: message.roomId,
+        //         count: 10,
+        //         agentId: runtime.agentId,
+        //     }
+        // );
 
         const recentFactsData = await memoryManager.getMemories({
             roomId: message.roomId,

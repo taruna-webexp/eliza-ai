@@ -7,7 +7,6 @@ import path from "node:path";
 export default defineConfig(({ mode }) => {
     const envDir = path.resolve(__dirname, "..");
     const env = loadEnv(mode, envDir, "");
-    console.log("env.SERVER_PORT1111", env.SERVER_URL);
     return {
         plugins: [
             react(),
@@ -22,12 +21,6 @@ export default defineConfig(({ mode }) => {
         define: {
             "import.meta.env.VITE_SERVER_PORT": JSON.stringify(
                 env.SERVER_PORT || "3000"
-            ),
-            "import.meta.env.VITE_SERVER_URL": JSON.stringify(
-                env.SERVER_URL || "https://elizas.assuredefi.com"
-            ),
-            "import.meta.env.VITE_SERVER_BASE_URL": JSON.stringify(
-                env.SERVER_BASE_URL
             ),
         },
         build: {

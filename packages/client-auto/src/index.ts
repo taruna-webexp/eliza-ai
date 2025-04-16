@@ -1,19 +1,27 @@
 import { type Client, type IAgentRuntime, elizaLogger } from "@elizaos/core";
 
 export class AutoClient {
-    interval: NodeJS.Timeout;
+    interval: NodeJS.Timeout | null = null;
     runtime: IAgentRuntime;
 
     constructor(runtime: IAgentRuntime) {
         this.runtime = runtime;
+        this.startLoop();
+    }
 
-        // start a loop that runs every x seconds
-        this.interval = setInterval(
-            async () => {
-                elizaLogger.log("running auto client...");
-            },
-            60 * 60 * 1000
-        ); // 1 hour in milliseconds
+    startLoop() {
+        this.interval = setInterval(async () => {
+            elizaLogger.log("running auto client...");
+            // maybe add your agent logic here
+        }, 60 * 60 * 1000);
+    }
+
+    stopLoop() {
+        if (this.interval) {
+            clearInterval(this.interval);
+            this.interval = null;
+            elizaLogger.log("Auto client interval cleared.");
+        }
     }
 }
 

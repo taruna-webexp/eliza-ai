@@ -1,9 +1,6 @@
 import type { UUID, Character } from "@elizaos/core";
 
-const BASE_URL =
-    import.meta.env.VITE_SERVER_BASE_URL || `https://elizas.assuredefi.com`;
-
-console.log("fddgfh",{ BASE_URL });
+const BASE_URL = `http://localhost:3000`;
 
 const fetcher = async ({
     url,

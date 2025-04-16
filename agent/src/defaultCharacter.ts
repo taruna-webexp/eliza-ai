@@ -1,24 +1,24 @@
-import { type Character, ModelProviderName } from "@elizaos/core";
+import { type Character, Clients, ModelProviderName } from "@elizaos/core";
 
 export const defaultCharacter: Character = {
     name: "Assure DeFi Agent",
     username: "AssureDeFiAgent",
     modelProvider: ModelProviderName.GROK,
     imageVisionModelProvider: ModelProviderName.GROK,
-    clients: [],
+    clients: [Clients.TWITTER],
     plugins: [],
     settings: {
         secrets: {
             GROK_API_KEY:
                 "xai-0bshYIUaujyH6ZMJeR93yDFWxMb31AVuDhRt58h0cABCQgTIQUx5aCHdAZoN9MWKxfjBZTZ9YuFwJtGp",
 
-            TWITTER_API_KEY: "4vGpiAYojsUcilKukEaFLAN7r",
+            TWITTER_API_KEY: "5bb3Q26sil8ElWHqubkhX3TDL",
             TWITTER_API_SECRET:
-                "tCPK6euc34qxbGlfpOdb3p1uG6mdKhKMCrtofldXRaMo8KTNxu",
+                "1ZlQiubvy1a32Vx3jcoJA7ClNZ3r62lcw7UTnt204SQF3jDOa8",
             TWITTER_ACCESS_TOKEN:
-                "1884363795469885440-bU2xuTKezPkzeBMRNv3G3YLaFK4GEa",
+                "1884363795469885440-p75zw1iJkNAW3fkaKyjRoj4lT8o3M6",
             TWITTER_ACCESS_SECRET:
-                "vKEc5Z24L0mj0yMnAWRXVROqHDWbIKGZriI3bJqXZdJa8",
+                "Ua7kSqWy8r9SccIVisxLmG8UrwctuFRdSN0mvywnYyrgY",
         },
         voice: {
             model: "en_US-male-medium",
