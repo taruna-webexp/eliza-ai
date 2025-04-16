@@ -72,10 +72,6 @@ importers:
       sharp:
         specifier: 0.33.5
         version: 0.33.5
-    optionalDependencies:
-      canvas:
-        specifier: ^2.8.0
-        version: 2.11.2(encoding@0.1.13)
     devDependencies:
       '@biomejs/biome':
         specifier: ^1.9.4
