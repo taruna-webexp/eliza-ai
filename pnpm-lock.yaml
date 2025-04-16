@@ -54,9 +54,6 @@ importers:
       bs58:
         specifier: 5.0.0
         version: 5.0.0
-      canvas:
-        specifier: ^2.8.0
-        version: 2.11.2(encoding@0.1.13)
       csv-parse:
         specifier: 5.6.0
         version: 5.6.0
@@ -75,6 +72,10 @@ importers:
       sharp:
         specifier: 0.33.5
         version: 0.33.5
+    optionalDependencies:
+      canvas:
+        specifier: ^2.8.0
+        version: 2.11.2(encoding@0.1.13)
     devDependencies:
       '@biomejs/biome':
         specifier: ^1.9.4
@@ -40788,6 +40789,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
       - supports-color
+    optional: true
 
   '@massalabs/massa-web3@5.1.1':
     dependencies:
@@ -45253,7 +45255,7 @@ snapshots:
   '@scure/starknet@1.1.0':
     dependencies:
       '@noble/curves': 1.7.0
-      '@noble/hashes': 1.6.0
+      '@noble/hashes': 1.6.1
 
   '@sei-js/core@3.2.1(bufferutil@4.0.9)(utf-8-validate@5.0.10)':
     dependencies:
@@ -50644,7 +50646,7 @@ snapshots:
     dependencies:
       '@walletconnect/jsonrpc-utils': 1.0.8
       '@walletconnect/safe-json': 1.0.2
-      cross-fetch: 3.1.8(encoding@0.1.13)
+      cross-fetch: 3.2.0(encoding@0.1.13)
       events: 3.3.0
     transitivePeerDependencies:
       - encoding
@@ -54080,6 +54082,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
       - supports-color
+    optional: true
 
   capability@0.2.5: {}
 
@@ -55578,6 +55581,7 @@ snapshots:
   decompress-response@4.2.1:
     dependencies:
       mimic-response: 2.1.0
+    optional: true
 
   decompress-response@6.0.0:
     dependencies:
@@ -57381,7 +57385,7 @@ snapshots:
 
   extract-zip@2.0.1:
     dependencies:
-      debug: 4.3.4
+      debug: 4.4.0(supports-color@8.1.1)
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -62680,7 +62684,8 @@ snapshots:
 
   mimic-response@1.0.1: {}
 
-  mimic-response@2.1.0: {}
+  mimic-response@2.1.0:
+    optional: true
 
   mimic-response@3.1.0: {}
 
@@ -67212,6 +67217,7 @@ snapshots:
       decompress-response: 4.2.1
       once: 1.4.0
       simple-concat: 1.0.1
+    optional: true
 
   simple-get@4.0.1:
     dependencies:
